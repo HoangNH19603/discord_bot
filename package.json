@@ -1,0 +1,12 @@
+{
+  "name": "CMD",
+  "version": "1.0.0",
+  "description": "useless bot",
+  "main": "index.js",
+  "author": "HoangHN",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5"
+  }
+}

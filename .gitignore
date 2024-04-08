@@ -1,0 +1,4 @@
+# ignore config & secrets
+node_modules
+.env
+config.json
