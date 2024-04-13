@@ -4,23 +4,23 @@ const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('ban')
-        .setDescription('ban bỏ mọe')
+        .setName('unban')
+        .setDescription('thả xích')
         .addUserOption(option => option
             .setName('user')
-            .setDescription('ban nó')
+            .setDescription('đ biết mô tả gì :)')
             .setRequired(true))
         .addStringOption(option => option
-            .setName('thì_thầm_anh_nói_nhỏ')
+            .setName('chửi_nó_trước_khi_thả_xích')
             .setDescription('chui chet cmn di <3'))
-            .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
+            .setDefaultMemberPermissions(PermissionFlagsBits.ban)
             .setDMPermission(false),
     async execute(interaction) {
         const target = interaction.options.getUser('user');
-        const reason = interaction.options.getString('thì_thầm_anh_nói_nhỏ');
+        const reason = interaction.options.getString('chửi_nó_trước_khi_thả_xích');
         // console.log(target);
-        await interaction.reply(`Ora ora ora ora ${target.username} đã bị khóa mõm`);
-		await interaction.guild.members.ban(target);
+        await interaction.reply(`Ora ora ora ora ${target.username} thả xích chó <3`);
+		await interaction.guild.members.unban(target);
         if (reason) {
             setTimeout(async () => {
                 await interaction.followUp(reason);
